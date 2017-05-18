@@ -1,0 +1,8 @@
+{
+    "local_ip": "0.0.0.0",
+    "local_port": 54321,
+    "ice_ip": "192.168.7.75",
+    "ice_port": 10000,
+    "session_app_id": 88,
+    "instance_id": "cp1"
+}

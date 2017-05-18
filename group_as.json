@@ -1,0 +1,12 @@
+{
+    "access_addr": "http://192.168.7.165:8080",
+    "local_addr": "192.168.7.75:1089",
+    "app_id": "1",
+    "app_verify_code": "vc1",
+    "ice_server_ip": "192.168.5.56",
+    "ice_server_port": 10001,
+    "listen_port": 1089,
+    "dev_id": "kevin",
+    "dev_verify_code": "123456",
+    "dev_group": "KevinGroup"
+}
