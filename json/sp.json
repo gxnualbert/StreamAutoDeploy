@@ -1,0 +1,14 @@
+{
+    "kafka_brokers": "192.168.6.209",
+    "zookeeper_servers": "192.168.7.20",
+    "ice_addr": "192.168.7.75",
+    "topic_partitions": 10000,
+    "topic_replication": 88,
+    "topic_sp_name": "cp_test1",
+    "topic_sp_group_name": "cp_test1",
+    "topic_sc_group_name": "cp_test1",
+    "instance_id": "cp_test1",
+    "addr": "cp_test1",
+    "port": 1089,
+    "protocol_version": 1
+}

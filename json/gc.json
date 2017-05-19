@@ -1,0 +1,14 @@
+{
+    "kafka_brokers": "192.168.7.160",
+    "zookeeper_servers": "192.168.7.75",
+    "ice_addr": "192.168.4.105",
+    "topic_partitions": 2,
+    "topic_replication": 1,
+    "topic_gc_name": "tesee",
+    "topic_gc_group_name": "192.168.7.105",
+    "topic_sc_group_name": "sdfsdf",
+    "instance_id": "1sdfasdf",
+    "addr": "sdfasdfasd",
+    "port": 1,
+    "protocol_version": 2
+}

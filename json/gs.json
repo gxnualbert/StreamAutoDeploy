@@ -1,0 +1,23 @@
+{
+    "nat_ip_list": ["192.168.6.209","192.168.6.204"],
+    "log_save_days": 15,
+    "ice_server_addr": "192.168.7.75",
+    "ice_server_port": 10000,
+    "process_name": "myproc",
+    "tcp_addr": "192.168.7.105",
+    "tcp_port": 1089,
+    "udp_addr": "192.168.7.105",
+    "udp_port": 1089,
+    "guid": "1",
+    "service_name": "myproc",
+    "priority": 1,
+    "session_app_id": 2,
+    "debug_mode": 2,
+    "instance_id": "sp",
+    "brokers": "192.168.7.106",
+    "group_id": "myproc",
+    "sc_topic": "myproc",
+    "gc_topic": "myproc",
+    "sys_log_interval": 12
+
+}

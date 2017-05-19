@@ -1,0 +1,11 @@
+{
+    "kafka_brokers": "192.168.6.209",
+    "zookeeper_servers": "192.168.5.206",
+    "ice_addr": "192.168.7.75",
+    "topic_partitions": 10000,
+    "topic_replication": 88,
+    "topic_sc_name": "cp_test1",
+    "topic_sc_group_name": "cp_test1",
+    "consumer_client_id": "cp_test1",
+    "protocol_version": 1
+}
