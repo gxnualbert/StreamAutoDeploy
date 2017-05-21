@@ -299,18 +299,18 @@ if __name__=="__main__":
 
     # service_data = scc.ConfigService('ice', 'ice', download_url)
     # scc.PostDataToServer(service_data, request_url)
-
-    service_data = scc.ConfigService('cp', 'cp', download_url)
-    scc.PostDataToServer(service_data, request_url)
-
-    # service_data=scc.ConfigService('gc','gc',download_url)
+    #
+    # service_data = scc.ConfigService('cp', 'cp', download_url)
     # scc.PostDataToServer(service_data, request_url)
+
+    service_data=scc.ConfigService('gc','gc',download_url)
+    scc.PostDataToServer(service_data, request_url)
     #
     # service_data = scc.ConfigService('gs', 'gs', download_url)
     # scc.PostDataToServer(service_data, request_url)
     #
-    # service_data = scc.ConfigService('sc', 'sc', download_url)
-    # scc.PostDataToServer(service_data, request_url)
+    service_data = scc.ConfigService('sc', 'sc', download_url)
+    scc.PostDataToServer(service_data, request_url)
     #
     # service_data = scc.ConfigService('ss', 'ss', download_url)
     # scc.PostDataToServer(service_data, request_url)
