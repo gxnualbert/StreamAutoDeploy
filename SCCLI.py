@@ -77,15 +77,15 @@ class DataParse():
         gc_conf.kafka_brokers=gc["kafka_brokers"]
         gc_conf.zookeeper_servers=gc["zookeeper_servers"]
         gc_conf.ice_addr=gc["ice_addr"]
-        gc_conf.topic_partitions=gc["topic_partitions"]
-        gc_conf.topic_replication=gc["topic_replication"]
+        # gc_conf.topic_partitions=gc["topic_partitions"]
+        # gc_conf.topic_replication=gc["topic_replication"]
         gc_conf.topic_gc_name=gc["topic_gc_name"]
         gc_conf.topic_gc_group_name=gc["topic_gc_group_name"]
         gc_conf.topic_sc_group_name=gc["topic_sc_group_name"]
         gc_conf.instance_id=gc["instance_id"]
-        gc_conf.addr=gc["addr"]
-        gc_conf.port=gc["port"]
-        gc_conf.protocol_version=gc["protocol_version"]
+        # gc_conf.addr=gc["addr"]
+        # gc_conf.port=gc["port"]
+        # gc_conf.protocol_version=gc["protocol_version"]
 
         gc_conf_data=gc_conf.SerializeToString()
         return gc_conf_data
@@ -99,25 +99,18 @@ class DataParse():
         gs_conf=smd.GsConf()
         # gs_conf.nat_ip_list.add()
 
-        gs_conf.log_save_days=gs["log_save_days"]
+        # gs_conf.log_save_days=gs["log_save_days"]
         gs_conf.ice_server_addr=gs["ice_server_addr"]
         gs_conf.ice_server_port=gs["ice_server_port"]
-        gs_conf.process_name=gs["process_name"]
         gs_conf.tcp_addr=gs["tcp_addr"]
         gs_conf.tcp_port=gs["tcp_port"]
         gs_conf.udp_addr=gs["udp_addr"]
         gs_conf.udp_port=gs["udp_port"]
-        gs_conf.guid=gs["guid"]
-        gs_conf.service_name=gs["service_name"]
-        gs_conf.priority=gs["priority"]
-        gs_conf.session_app_id=gs["session_app_id"]
-        gs_conf.debug_mode=gs["debug_mode"]
         gs_conf.instance_id=gs["instance_id"]
         gs_conf.brokers=gs["brokers"]
         gs_conf.group_id=gs["group_id"]
         gs_conf.sc_topic=gs["sc_topic"]
         gs_conf.gc_topic=gs["gc_topic"]
-        gs_conf.sys_log_interval=gs["sys_log_interval"]
 
         gs_conf_data=gs_conf.SerializeToString()
 
@@ -141,12 +134,9 @@ class DataParse():
         sc_conf.kafka_brokers=sc["kafka_brokers"]
         sc_conf.zookeeper_servers=sc["zookeeper_servers"]
         sc_conf.ice_addr=sc["ice_addr"]
-        sc_conf.topic_partitions=sc["topic_partitions"]
-        sc_conf.topic_replication=sc["topic_replication"]
         sc_conf.topic_sc_name=sc["topic_sc_name"]
         sc_conf.topic_sc_group_name=sc["topic_sc_group_name"]
         sc_conf.consumer_client_id=sc["consumer_client_id"]
-        sc_conf.protocol_version=sc["protocol_version"]
 
         sc_conf_data=sc_conf.SerializeToString()
 
@@ -178,7 +168,7 @@ class DataParse():
         service_conf.download_url=down_url
         service_conf.config=conf_data
         if smdname:
-            service_conf.smd_name="smdname"
+            service_conf.smd_name=smdname
         serial_data=service_conf.SerializeToString()
         return serial_data
     def SendData(self,data,url):
@@ -246,9 +236,8 @@ class DataParse():
             print "wrong service name was using!!!!!!"
 
         if "smd_name" in service_keys:
-            smd_name=self.GetValueOfOption(sectionname,"smd_name")
-            print smd_name
-            service_data=self.ServiceConfData(servic_ename,download_url,conf,smdname=smd_name)
+            smd=self.GetValueOfOption(sectionname,"smd_name")
+            service_data=self.ServiceConfData(servic_ename,download_url,conf,smdname=smd)
         else:
             service_data = self.ServiceConfData(servic_ename, download_url, conf)
         return service_data
@@ -308,8 +297,23 @@ if __name__=="__main__":
         #     service_data = scc.ConfigService('stream_as', sectionKeyList[i], download_url)
         #     scc.PostDataToServer(service_data, request_url)
 
-    service_data = scc.ConfigService('ice', 'ice', download_url)
+    # service_data = scc.ConfigService('ice', 'ice', download_url)
+    # scc.PostDataToServer(service_data, request_url)
+
+    service_data = scc.ConfigService('cp', 'cp', download_url)
     scc.PostDataToServer(service_data, request_url)
+
+    # service_data=scc.ConfigService('gc','gc',download_url)
+    # scc.PostDataToServer(service_data, request_url)
+    #
+    # service_data = scc.ConfigService('gs', 'gs', download_url)
+    # scc.PostDataToServer(service_data, request_url)
+    #
+    # service_data = scc.ConfigService('sc', 'sc', download_url)
+    # scc.PostDataToServer(service_data, request_url)
+    #
+    # service_data = scc.ConfigService('ss', 'ss', download_url)
+    # scc.PostDataToServer(service_data, request_url)
 
 
 

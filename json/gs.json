@@ -1,23 +1,14 @@
 {
-    "nat_ip_list": ["192.168.6.209","192.168.6.204"],
-    "log_save_days": 15,
-    "ice_server_addr": "192.168.7.75",
+    "ice_server_addr": "192.168.6.132",
     "ice_server_port": 10000,
-    "process_name": "myproc",
-    "tcp_addr": "192.168.7.105",
+    "tcp_addr": "192.168.6.132",
     "tcp_port": 1089,
-    "udp_addr": "192.168.7.105",
+    "udp_addr": "192.168.6.132",
     "udp_port": 1089,
-    "guid": "1",
-    "service_name": "myproc",
-    "priority": 1,
-    "session_app_id": 2,
-    "debug_mode": 2,
-    "instance_id": "sp",
-    "brokers": "192.168.7.106",
-    "group_id": "myproc",
-    "sc_topic": "myproc",
-    "gc_topic": "myproc",
-    "sys_log_interval": 12
-
+    "service_name": "service",
+    "instance_id": "gs1",
+    "brokers": "192.168.7.60:9092,192.168.7.61:9092,192.168.7.62:9092",
+    "group_id": "gs_group1",
+    "sc_topic": "sc_group1",
+    "gc_topic": "gc_group1"
 }
