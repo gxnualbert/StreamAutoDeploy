@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='fsp-smd.proto',
   package='com.fsmeeting.fsp.proto.smd',
   syntax='proto3',
-  serialized_pb=_b('\n\rfsp-smd.proto\x12\x1b\x63om.fsmeeting.fsp.proto.smd\x1a\x10\x66sp-common.proto\"G\n\rServiceOnline\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x61\x64\x64r\x18\x02 \x01(\t\x12\x1a\n\x12\x61vailable_services\x18\x03 \x03(\t\"T\n\x10ServiceOnlineRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"S\n\x0bServiceConf\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64ownload_url\x18\x02 \x01(\t\x12\x0e\n\x06\x63onfig\x18\x03 \x01(\x0c\x12\x10\n\x08smd_name\x18\x04 \x01(\t\"\x83\x01\n\x0eServiceConfRsp\x12\x14\n\x0cservice_name\x18\x01 \x01(\t\x12\x19\n\x11service_dest_addr\x18\x02 \x01(\t\x12@\n\x08response\x18\x03 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"<\n\x06SsConf\x12\x0c\n\x04port\x18\x01 \x01(\x05\x12\x13\n\x0binstance_id\x18\x02 \x01(\t\x12\x0f\n\x07\x62rokers\x18\x03 \x01(\t\"M\n\tSsConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"}\n\x06\x43pConf\x12\x10\n\x08local_ip\x18\x01 \x01(\t\x12\x12\n\nlocal_port\x18\x02 \x01(\x05\x12\x0e\n\x06ice_ip\x18\x03 \x01(\t\x12\x10\n\x08ice_port\x18\x04 \x01(\x05\x12\x16\n\x0esession_app_id\x18\x05 \x01(\x05\x12\x13\n\x0binstance_id\x18\x06 \x01(\t\"M\n\tCpConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"c\n\x0cStreamAsConf\x12\x0c\n\x04\x61\x64\x64r\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x16\n\x0esession_app_id\x18\x03 \x01(\x05\x12\x0b\n\x03url\x18\x04 \x01(\t\x12\x12\n\ndebug_mode\x18\x05 \x01(\x05\"S\n\x0fStreamAsConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\xe0\x01\n\x0bGroupAsConf\x12\x13\n\x0b\x61\x63\x63\x65ss_addr\x18\x01 \x01(\t\x12\x12\n\nlocal_addr\x18\x02 \x01(\t\x12\x0e\n\x06\x61pp_id\x18\x03 \x01(\t\x12\x17\n\x0f\x61pp_verify_code\x18\x04 \x01(\t\x12\x15\n\rice_server_ip\x18\x05 \x01(\t\x12\x17\n\x0fice_server_port\x18\x06 \x01(\x05\x12\x13\n\x0blisten_port\x18\x07 \x01(\x05\x12\x0e\n\x06\x64\x65v_id\x18\x08 \x01(\t\x12\x17\n\x0f\x64\x65v_verify_code\x18\t \x01(\t\x12\x11\n\tdev_group\x18\n \x01(\t\"R\n\x0eGroupAsConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\xeb\x01\n\x06ScConf\x12\x15\n\rkafka_brokers\x18\x01 \x01(\t\x12\x19\n\x11zookeeper_servers\x18\x02 \x01(\t\x12\x10\n\x08ice_addr\x18\x03 \x01(\t\x12\x18\n\x10topic_partitions\x18\x04 \x01(\x05\x12\x19\n\x11topic_replication\x18\x05 \x01(\x05\x12\x15\n\rtopic_sc_name\x18\x06 \x01(\t\x12\x1b\n\x13topic_sc_group_name\x18\x07 \x01(\t\x12\x1a\n\x12\x63onsumer_client_id\x18\x08 \x01(\t\x12\x18\n\x10protocol_version\x18\t \x01(\x05\"M\n\tScConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x1b\n\nAccessConf\x12\r\n\x05proxy\x18\x01 \x01(\t\"Q\n\rAccessConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x9d\x02\n\x06SpConf\x12\x15\n\rkafka_brokers\x18\x01 \x01(\t\x12\x19\n\x11zookeeper_servers\x18\x02 \x01(\t\x12\x10\n\x08ice_addr\x18\x03 \x01(\t\x12\x18\n\x10topic_partitions\x18\x04 \x01(\x05\x12\x19\n\x11topic_replication\x18\x05 \x01(\x05\x12\x15\n\rtopic_sp_name\x18\x06 \x01(\t\x12\x1b\n\x13topic_sp_group_name\x18\x07 \x01(\t\x12\x1b\n\x13topic_sc_group_name\x18\x08 \x01(\t\x12\x13\n\x0binstance_id\x18\t \x01(\t\x12\x0c\n\x04\x61\x64\x64r\x18\n \x01(\t\x12\x0c\n\x04port\x18\x0b \x01(\x05\x12\x18\n\x10protocol_version\x18\x0c \x01(\x05\"M\n\tSpConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x1d\n\x07IceConf\x12\x12\n\nredis_addr\x18\x01 \x01(\t\"N\n\nIceConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x14\n\x06IpList\x12\n\n\x02ip\x18\x01 \x03(\t\"\xc1\x03\n\x06GsConf\x12\x38\n\x0bnat_ip_list\x18\x01 \x01(\x0b\x32#.com.fsmeeting.fsp.proto.smd.IpList\x12\x15\n\rlog_save_days\x18\x02 \x01(\x05\x12\x17\n\x0fice_server_addr\x18\x03 \x01(\t\x12\x17\n\x0fice_server_port\x18\x04 \x01(\x05\x12\x14\n\x0cprocess_name\x18\x05 \x01(\t\x12\x10\n\x08tcp_addr\x18\x06 \x01(\t\x12\x10\n\x08tcp_port\x18\x07 \x01(\x05\x12\x10\n\x08udp_addr\x18\x08 \x01(\t\x12\x10\n\x08udp_port\x18\t \x01(\x05\x12\x0c\n\x04guid\x18\n \x01(\t\x12\x14\n\x0cservice_name\x18\x0b \x01(\t\x12\x10\n\x08priority\x18\x0c \x01(\x05\x12\x16\n\x0esession_app_id\x18\r \x01(\x05\x12\x12\n\ndebug_mode\x18\x0e \x01(\x05\x12\x13\n\x0binstance_id\x18\x0f \x01(\t\x12\x0f\n\x07\x62rokers\x18\x10 \x01(\t\x12\x10\n\x08group_id\x18\x11 \x01(\t\x12\x10\n\x08sc_topic\x18\x12 \x01(\t\x12\x10\n\x08gc_topic\x18\x13 \x01(\t\x12\x18\n\x10sys_log_interval\x18\x14 \x01(\x05\"M\n\tGsConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x9d\x02\n\x06GcConf\x12\x15\n\rkafka_brokers\x18\x01 \x01(\t\x12\x19\n\x11zookeeper_servers\x18\x02 \x01(\t\x12\x10\n\x08ice_addr\x18\x03 \x01(\t\x12\x18\n\x10topic_partitions\x18\x04 \x01(\x05\x12\x19\n\x11topic_replication\x18\x05 \x01(\x05\x12\x15\n\rtopic_gc_name\x18\x06 \x01(\t\x12\x1b\n\x13topic_gc_group_name\x18\x07 \x01(\t\x12\x1b\n\x13topic_sc_group_name\x18\x08 \x01(\t\x12\x13\n\x0binstance_id\x18\t \x01(\t\x12\x0c\n\x04\x61\x64\x64r\x18\n \x01(\t\x12\x0c\n\x04port\x18\x0b \x01(\x05\x12\x18\n\x10protocol_version\x18\x0c \x01(\x05\"M\n\tGcConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse*\xb8\x04\n\x0fProtoDictionary\x12\x19\n\x15\x45num2UnknownInterface\x10\x00\x12\x10\n\x0b\x45num2SsConf\x10\xc1>\x12\x13\n\x0e\x45num2SsConfRsp\x10\xc2>\x12\x10\n\x0b\x45num2CpConf\x10\xc3>\x12\x13\n\x0e\x45num2CpConfRsp\x10\xc4>\x12\x16\n\x11\x45num2StreamAsConf\x10\xc5>\x12\x19\n\x14\x45num2StreamAsConfRsp\x10\xc6>\x12\x10\n\x0b\x45num2ScConf\x10\xc7>\x12\x13\n\x0e\x45num2ScConfRsp\x10\xc8>\x12\x14\n\x0f\x45num2AccessConf\x10\xc9>\x12\x17\n\x12\x45num2AccessConfRsp\x10\xca>\x12\x10\n\x0b\x45num2SpConf\x10\xcb>\x12\x13\n\x0e\x45num2SpConfRsp\x10\xcc>\x12\x11\n\x0c\x45num2IceConf\x10\xcd>\x12\x14\n\x0f\x45num2IceConfRsp\x10\xce>\x12\x10\n\x0b\x45num2GsConf\x10\xcf>\x12\x13\n\x0e\x45num2GsConfRsp\x10\xd0>\x12\x10\n\x0b\x45num2GcConf\x10\xd1>\x12\x13\n\x0e\x45num2GcConfRsp\x10\xd2>\x12\x15\n\x10\x45num2GroupAsConf\x10\xd3>\x12\x18\n\x13\x45num2GroupAsConfRsp\x10\xd4>\x12\x15\n\x10\x45num2ServiceConf\x10\xd5>\x12\x18\n\x13\x45num2ServiceConfRsp\x10\xd6>\x12\x17\n\x12\x45num2ServiceOnline\x10\xd7>\x12\x1a\n\x15\x45num2ServiceOnlineRsp\x10\xd8>B(\n\x1b\x63om.fsmeeting.fsp.proto.smdP\x01\xf8\x01\x01\xa2\x02\x03GPBb\x06proto3')
+  serialized_pb=_b('\n\rfsp-smd.proto\x12\x1b\x63om.fsmeeting.fsp.proto.smd\x1a\x10\x66sp-common.proto\"G\n\rServiceOnline\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x61\x64\x64r\x18\x02 \x01(\t\x12\x1a\n\x12\x61vailable_services\x18\x03 \x03(\t\"T\n\x10ServiceOnlineRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"5\n\x0bServiceStop\x12\x14\n\x0cservice_name\x18\x01 \x01(\t\x12\x10\n\x08smd_name\x18\x02 \x01(\t\"R\n\x0eServiceStopRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"S\n\x0bServiceConf\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64ownload_url\x18\x02 \x01(\t\x12\x0e\n\x06\x63onfig\x18\x03 \x01(\x0c\x12\x10\n\x08smd_name\x18\x04 \x01(\t\"\x83\x01\n\x0eServiceConfRsp\x12\x14\n\x0cservice_name\x18\x01 \x01(\t\x12\x19\n\x11service_dest_addr\x18\x02 \x01(\t\x12@\n\x08response\x18\x03 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"<\n\x06SsConf\x12\x0c\n\x04port\x18\x01 \x01(\x05\x12\x13\n\x0binstance_id\x18\x02 \x01(\t\x12\x0f\n\x07\x62rokers\x18\x03 \x01(\t\"M\n\tSsConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x8e\x01\n\x06\x43pConf\x12\x10\n\x08local_ip\x18\x01 \x01(\t\x12\x12\n\nlocal_port\x18\x02 \x01(\x05\x12\x0e\n\x06ice_ip\x18\x03 \x01(\t\x12\x10\n\x08ice_port\x18\x04 \x01(\x05\x12\x16\n\x0esession_app_id\x18\x05 \x01(\x05\x12\x13\n\x0binstance_id\x18\x06 \x01(\t\x12\x0f\n\x07\x62rokers\x18\x07 \x01(\t\"M\n\tCpConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"c\n\x0cStreamAsConf\x12\x0c\n\x04\x61\x64\x64r\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x16\n\x0esession_app_id\x18\x03 \x01(\x05\x12\x0b\n\x03url\x18\x04 \x01(\t\x12\x12\n\ndebug_mode\x18\x05 \x01(\x05\"S\n\x0fStreamAsConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\xe0\x01\n\x0bGroupAsConf\x12\x13\n\x0b\x61\x63\x63\x65ss_addr\x18\x01 \x01(\t\x12\x12\n\nlocal_addr\x18\x02 \x01(\t\x12\x0e\n\x06\x61pp_id\x18\x03 \x01(\t\x12\x17\n\x0f\x61pp_verify_code\x18\x04 \x01(\t\x12\x15\n\rice_server_ip\x18\x05 \x01(\t\x12\x17\n\x0fice_server_port\x18\x06 \x01(\x05\x12\x13\n\x0blisten_port\x18\x07 \x01(\x05\x12\x0e\n\x06\x64\x65v_id\x18\x08 \x01(\t\x12\x17\n\x0f\x64\x65v_verify_code\x18\t \x01(\t\x12\x11\n\tdev_group\x18\n \x01(\t\"R\n\x0eGroupAsConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\xeb\x01\n\x06ScConf\x12\x15\n\rkafka_brokers\x18\x01 \x01(\t\x12\x19\n\x11zookeeper_servers\x18\x02 \x01(\t\x12\x10\n\x08ice_addr\x18\x03 \x01(\t\x12\x18\n\x10topic_partitions\x18\x04 \x01(\x05\x12\x19\n\x11topic_replication\x18\x05 \x01(\x05\x12\x15\n\rtopic_sc_name\x18\x06 \x01(\t\x12\x1b\n\x13topic_sc_group_name\x18\x07 \x01(\t\x12\x1a\n\x12\x63onsumer_client_id\x18\x08 \x01(\t\x12\x18\n\x10protocol_version\x18\t \x01(\x05\"M\n\tScConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x1b\n\nAccessConf\x12\r\n\x05proxy\x18\x01 \x01(\t\"Q\n\rAccessConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x9d\x02\n\x06SpConf\x12\x15\n\rkafka_brokers\x18\x01 \x01(\t\x12\x19\n\x11zookeeper_servers\x18\x02 \x01(\t\x12\x10\n\x08ice_addr\x18\x03 \x01(\t\x12\x18\n\x10topic_partitions\x18\x04 \x01(\x05\x12\x19\n\x11topic_replication\x18\x05 \x01(\x05\x12\x15\n\rtopic_sp_name\x18\x06 \x01(\t\x12\x1b\n\x13topic_sp_group_name\x18\x07 \x01(\t\x12\x1b\n\x13topic_sc_group_name\x18\x08 \x01(\t\x12\x13\n\x0binstance_id\x18\t \x01(\t\x12\x0c\n\x04\x61\x64\x64r\x18\n \x01(\t\x12\x0c\n\x04port\x18\x0b \x01(\x05\x12\x18\n\x10protocol_version\x18\x0c \x01(\x05\"M\n\tSpConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x1d\n\x07IceConf\x12\x12\n\nredis_addr\x18\x01 \x01(\t\"N\n\nIceConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x14\n\x06IpList\x12\n\n\x02ip\x18\x01 \x03(\t\"\xc1\x03\n\x06GsConf\x12\x38\n\x0bnat_ip_list\x18\x01 \x01(\x0b\x32#.com.fsmeeting.fsp.proto.smd.IpList\x12\x15\n\rlog_save_days\x18\x02 \x01(\x05\x12\x17\n\x0fice_server_addr\x18\x03 \x01(\t\x12\x17\n\x0fice_server_port\x18\x04 \x01(\x05\x12\x14\n\x0cprocess_name\x18\x05 \x01(\t\x12\x10\n\x08tcp_addr\x18\x06 \x01(\t\x12\x10\n\x08tcp_port\x18\x07 \x01(\x05\x12\x10\n\x08udp_addr\x18\x08 \x01(\t\x12\x10\n\x08udp_port\x18\t \x01(\x05\x12\x0c\n\x04guid\x18\n \x01(\t\x12\x14\n\x0cservice_name\x18\x0b \x01(\t\x12\x10\n\x08priority\x18\x0c \x01(\x05\x12\x16\n\x0esession_app_id\x18\r \x01(\x05\x12\x12\n\ndebug_mode\x18\x0e \x01(\x05\x12\x13\n\x0binstance_id\x18\x0f \x01(\t\x12\x0f\n\x07\x62rokers\x18\x10 \x01(\t\x12\x10\n\x08group_id\x18\x11 \x01(\t\x12\x10\n\x08sc_topic\x18\x12 \x01(\t\x12\x10\n\x08gc_topic\x18\x13 \x01(\t\x12\x18\n\x10sys_log_interval\x18\x14 \x01(\x05\"M\n\tGsConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse\"\x9d\x02\n\x06GcConf\x12\x15\n\rkafka_brokers\x18\x01 \x01(\t\x12\x19\n\x11zookeeper_servers\x18\x02 \x01(\t\x12\x10\n\x08ice_addr\x18\x03 \x01(\t\x12\x18\n\x10topic_partitions\x18\x04 \x01(\x05\x12\x19\n\x11topic_replication\x18\x05 \x01(\x05\x12\x15\n\rtopic_gc_name\x18\x06 \x01(\t\x12\x1b\n\x13topic_gc_group_name\x18\x07 \x01(\t\x12\x1b\n\x13topic_sc_group_name\x18\x08 \x01(\t\x12\x13\n\x0binstance_id\x18\t \x01(\t\x12\x0c\n\x04\x61\x64\x64r\x18\n \x01(\t\x12\x0c\n\x04port\x18\x0b \x01(\x05\x12\x18\n\x10protocol_version\x18\x0c \x01(\x05\"M\n\tGcConfRsp\x12@\n\x08response\x18\x01 \x01(\x0b\x32..com.fsmeeting.fsp.proto.common.CommonResponse*\xe9\x04\n\x0fProtoDictionary\x12\x19\n\x15\x45num2UnknownInterface\x10\x00\x12\x10\n\x0b\x45num2SsConf\x10\xc1>\x12\x13\n\x0e\x45num2SsConfRsp\x10\xc2>\x12\x10\n\x0b\x45num2CpConf\x10\xc3>\x12\x13\n\x0e\x45num2CpConfRsp\x10\xc4>\x12\x16\n\x11\x45num2StreamAsConf\x10\xc5>\x12\x19\n\x14\x45num2StreamAsConfRsp\x10\xc6>\x12\x10\n\x0b\x45num2ScConf\x10\xc7>\x12\x13\n\x0e\x45num2ScConfRsp\x10\xc8>\x12\x14\n\x0f\x45num2AccessConf\x10\xc9>\x12\x17\n\x12\x45num2AccessConfRsp\x10\xca>\x12\x10\n\x0b\x45num2SpConf\x10\xcb>\x12\x13\n\x0e\x45num2SpConfRsp\x10\xcc>\x12\x11\n\x0c\x45num2IceConf\x10\xcd>\x12\x14\n\x0f\x45num2IceConfRsp\x10\xce>\x12\x10\n\x0b\x45num2GsConf\x10\xcf>\x12\x13\n\x0e\x45num2GsConfRsp\x10\xd0>\x12\x10\n\x0b\x45num2GcConf\x10\xd1>\x12\x13\n\x0e\x45num2GcConfRsp\x10\xd2>\x12\x15\n\x10\x45num2GroupAsConf\x10\xd3>\x12\x18\n\x13\x45num2GroupAsConfRsp\x10\xd4>\x12\x15\n\x10\x45num2ServiceConf\x10\xd5>\x12\x18\n\x13\x45num2ServiceConfRsp\x10\xd6>\x12\x17\n\x12\x45num2ServiceOnline\x10\xd7>\x12\x1a\n\x15\x45num2ServiceOnlineRsp\x10\xd8>\x12\x15\n\x10\x45num2ServiceStop\x10\xd9>\x12\x18\n\x13\x45num2ServiceStopRsp\x10\xda>B(\n\x1b\x63om.fsmeeting.fsp.proto.smdP\x01\xf8\x01\x01\xa2\x02\x03GPBb\x06proto3')
   ,
   dependencies=[fsp__common__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -132,11 +132,19 @@ _PROTODICTIONARY = _descriptor.EnumDescriptor(
       name='Enum2ServiceOnlineRsp', index=24, number=8024,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='Enum2ServiceStop', index=25, number=8025,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='Enum2ServiceStopRsp', index=26, number=8026,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=3114,
-  serialized_end=3682,
+  serialized_start=3271,
+  serialized_end=3888,
 )
 _sym_db.RegisterEnumDescriptor(_PROTODICTIONARY)
 
@@ -166,6 +174,8 @@ Enum2ServiceConf = 8021
 Enum2ServiceConfRsp = 8022
 Enum2ServiceOnline = 8023
 Enum2ServiceOnlineRsp = 8024
+Enum2ServiceStop = 8025
+Enum2ServiceStopRsp = 8026
 
 
 
@@ -245,6 +255,75 @@ _SERVICEONLINERSP = _descriptor.Descriptor(
 )
 
 
+_SERVICESTOP = _descriptor.Descriptor(
+  name='ServiceStop',
+  full_name='com.fsmeeting.fsp.proto.smd.ServiceStop',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='service_name', full_name='com.fsmeeting.fsp.proto.smd.ServiceStop.service_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='smd_name', full_name='com.fsmeeting.fsp.proto.smd.ServiceStop.smd_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=223,
+  serialized_end=276,
+)
+
+
+_SERVICESTOPRSP = _descriptor.Descriptor(
+  name='ServiceStopRsp',
+  full_name='com.fsmeeting.fsp.proto.smd.ServiceStopRsp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='response', full_name='com.fsmeeting.fsp.proto.smd.ServiceStopRsp.response', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=278,
+  serialized_end=360,
+)
+
+
 _SERVICECONF = _descriptor.Descriptor(
   name='ServiceConf',
   full_name='com.fsmeeting.fsp.proto.smd.ServiceConf',
@@ -292,8 +371,8 @@ _SERVICECONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=223,
-  serialized_end=306,
+  serialized_start=362,
+  serialized_end=445,
 )
 
 
@@ -337,8 +416,8 @@ _SERVICECONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=309,
-  serialized_end=440,
+  serialized_start=448,
+  serialized_end=579,
 )
 
 
@@ -382,8 +461,8 @@ _SSCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=442,
-  serialized_end=502,
+  serialized_start=581,
+  serialized_end=641,
 )
 
 
@@ -413,8 +492,8 @@ _SSCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=504,
-  serialized_end=581,
+  serialized_start=643,
+  serialized_end=720,
 )
 
 
@@ -467,6 +546,13 @@ _CPCONF = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='brokers', full_name='com.fsmeeting.fsp.proto.smd.CpConf.brokers', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -479,8 +565,8 @@ _CPCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=583,
-  serialized_end=708,
+  serialized_start=723,
+  serialized_end=865,
 )
 
 
@@ -510,8 +596,8 @@ _CPCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=710,
-  serialized_end=787,
+  serialized_start=867,
+  serialized_end=944,
 )
 
 
@@ -569,8 +655,8 @@ _STREAMASCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=789,
-  serialized_end=888,
+  serialized_start=946,
+  serialized_end=1045,
 )
 
 
@@ -600,8 +686,8 @@ _STREAMASCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=890,
-  serialized_end=973,
+  serialized_start=1047,
+  serialized_end=1130,
 )
 
 
@@ -694,8 +780,8 @@ _GROUPASCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=976,
-  serialized_end=1200,
+  serialized_start=1133,
+  serialized_end=1357,
 )
 
 
@@ -725,8 +811,8 @@ _GROUPASCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1202,
-  serialized_end=1284,
+  serialized_start=1359,
+  serialized_end=1441,
 )
 
 
@@ -812,8 +898,8 @@ _SCCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1287,
-  serialized_end=1522,
+  serialized_start=1444,
+  serialized_end=1679,
 )
 
 
@@ -843,8 +929,8 @@ _SCCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1524,
-  serialized_end=1601,
+  serialized_start=1681,
+  serialized_end=1758,
 )
 
 
@@ -874,8 +960,8 @@ _ACCESSCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1603,
-  serialized_end=1630,
+  serialized_start=1760,
+  serialized_end=1787,
 )
 
 
@@ -905,8 +991,8 @@ _ACCESSCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1632,
-  serialized_end=1713,
+  serialized_start=1789,
+  serialized_end=1870,
 )
 
 
@@ -1013,8 +1099,8 @@ _SPCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1716,
-  serialized_end=2001,
+  serialized_start=1873,
+  serialized_end=2158,
 )
 
 
@@ -1044,8 +1130,8 @@ _SPCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2003,
-  serialized_end=2080,
+  serialized_start=2160,
+  serialized_end=2237,
 )
 
 
@@ -1075,8 +1161,8 @@ _ICECONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2082,
-  serialized_end=2111,
+  serialized_start=2239,
+  serialized_end=2268,
 )
 
 
@@ -1106,8 +1192,8 @@ _ICECONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2113,
-  serialized_end=2191,
+  serialized_start=2270,
+  serialized_end=2348,
 )
 
 
@@ -1137,8 +1223,8 @@ _IPLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2193,
-  serialized_end=2213,
+  serialized_start=2350,
+  serialized_end=2370,
 )
 
 
@@ -1301,8 +1387,8 @@ _GSCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2216,
-  serialized_end=2665,
+  serialized_start=2373,
+  serialized_end=2822,
 )
 
 
@@ -1332,8 +1418,8 @@ _GSCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2667,
-  serialized_end=2744,
+  serialized_start=2824,
+  serialized_end=2901,
 )
 
 
@@ -1440,8 +1526,8 @@ _GCCONF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2747,
-  serialized_end=3032,
+  serialized_start=2904,
+  serialized_end=3189,
 )
 
 
@@ -1471,11 +1557,12 @@ _GCCONFRSP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3034,
-  serialized_end=3111,
+  serialized_start=3191,
+  serialized_end=3268,
 )
 
 _SERVICEONLINERSP.fields_by_name['response'].message_type = fsp__common__pb2._COMMONRESPONSE
+_SERVICESTOPRSP.fields_by_name['response'].message_type = fsp__common__pb2._COMMONRESPONSE
 _SERVICECONFRSP.fields_by_name['response'].message_type = fsp__common__pb2._COMMONRESPONSE
 _SSCONFRSP.fields_by_name['response'].message_type = fsp__common__pb2._COMMONRESPONSE
 _CPCONFRSP.fields_by_name['response'].message_type = fsp__common__pb2._COMMONRESPONSE
@@ -1490,6 +1577,8 @@ _GSCONFRSP.fields_by_name['response'].message_type = fsp__common__pb2._COMMONRES
 _GCCONFRSP.fields_by_name['response'].message_type = fsp__common__pb2._COMMONRESPONSE
 DESCRIPTOR.message_types_by_name['ServiceOnline'] = _SERVICEONLINE
 DESCRIPTOR.message_types_by_name['ServiceOnlineRsp'] = _SERVICEONLINERSP
+DESCRIPTOR.message_types_by_name['ServiceStop'] = _SERVICESTOP
+DESCRIPTOR.message_types_by_name['ServiceStopRsp'] = _SERVICESTOPRSP
 DESCRIPTOR.message_types_by_name['ServiceConf'] = _SERVICECONF
 DESCRIPTOR.message_types_by_name['ServiceConfRsp'] = _SERVICECONFRSP
 DESCRIPTOR.message_types_by_name['SsConf'] = _SSCONF
@@ -1528,6 +1617,20 @@ ServiceOnlineRsp = _reflection.GeneratedProtocolMessageType('ServiceOnlineRsp', 
   # @@protoc_insertion_point(class_scope:com.fsmeeting.fsp.proto.smd.ServiceOnlineRsp)
   ))
 _sym_db.RegisterMessage(ServiceOnlineRsp)
+
+ServiceStop = _reflection.GeneratedProtocolMessageType('ServiceStop', (_message.Message,), dict(
+  DESCRIPTOR = _SERVICESTOP,
+  __module__ = 'fsp_smd_pb2'
+  # @@protoc_insertion_point(class_scope:com.fsmeeting.fsp.proto.smd.ServiceStop)
+  ))
+_sym_db.RegisterMessage(ServiceStop)
+
+ServiceStopRsp = _reflection.GeneratedProtocolMessageType('ServiceStopRsp', (_message.Message,), dict(
+  DESCRIPTOR = _SERVICESTOPRSP,
+  __module__ = 'fsp_smd_pb2'
+  # @@protoc_insertion_point(class_scope:com.fsmeeting.fsp.proto.smd.ServiceStopRsp)
+  ))
+_sym_db.RegisterMessage(ServiceStopRsp)
 
 ServiceConf = _reflection.GeneratedProtocolMessageType('ServiceConf', (_message.Message,), dict(
   DESCRIPTOR = _SERVICECONF,

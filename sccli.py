@@ -18,8 +18,11 @@ class DataParse():
         cp_conf.local_ip=cp["local_ip"]
         cp_conf.local_port=cp["local_port"]
         cp_conf.ice_ip=cp["ice_ip"]
+        cp_conf.ice_port=cp["ice_port"]
         cp_conf.session_app_id=cp["session_app_id"]
         cp_conf.instance_id=cp["instance_id"]
+        cp_conf.sc_topic=cp["sc_topic"]
+        cp_conf.brokers=cp["brokers"]
         cp_conf_data=cp_conf.SerializeToString()
         return cp_conf_data
     def ParseGroupASJson(self,filename):
@@ -58,6 +61,8 @@ class DataParse():
         ss_conf=smd.SsConf()
         ss_conf.port=ss["port"]
         ss_conf.instance_id=ss["instance_id"]
+        ss_conf.ice_addr_port=ss["ice_addr_port"]
+        ss_conf.sc_topic=ss["sc_topic"]
         ss_conf.brokers=ss["brokers"]
         ss_conf_data=ss_conf.SerializeToString()
         return ss_conf_data
@@ -171,10 +176,25 @@ class DataParse():
             service_conf.smd_name=smdname
         serial_data=service_conf.SerializeToString()
         return serial_data
+    def ServiceStop(self,service_name,smd_name):
+
+        service_stop=smd.ServiceStop()
+        service_stop.service_name=service_name
+        service_stop.smd_name=smd_name
+
+        serial_data=service_stop.SerializeToString()
+        # self.PostDataToServer(serial_data,request_url)
+        return serial_data
+
+
     def SendData(self,data,url):
         p = subprocess.Popen("curl -v --data \'" + service_data + "\' " + url, stdin=subprocess.PIPE,
                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         stdout = p.stdout.read()
+        if not stdout:
+            print "CCS服务器返回空值，请确认CCS服务器是否开启！！！！"
+            print stdout
+            sys.exit()
         return stdout
     def ParseRsp(self,rsp_data):
         rsp=smd.ServiceConfRsp()
@@ -240,12 +260,21 @@ class DataParse():
             service_data=self.ServiceConfData(servic_ename,download_url,conf,smdname=smd)
         else:
             service_data = self.ServiceConfData(servic_ename, download_url, conf)
+        # if "servicestop" in sectionname:
+        #     smdname=self.GetValueOfOption(sectionname,"smd_name")
+        #     service_data=self.ServiceStop(servic_ename,smdname,download_url)
         return service_data
 
-
+    def ConfigStopService(self,sectionname):
+        servic_ename = self.GetValueOfOption(sectionname, "service_name")
+        service_keys = self.GetConfOption(sectionname)
+        smdname=self.GetValueOfOption(sectionname,"smd_name")
+        service_data = self.ServiceStop(servic_ename, smdname)
+        return service_data
 
     def PostDataToServer(self,service_data,request_url):
         stdout = self.SendData(service_data, request_url)
+        print stdout
         scc.ParseRsp(stdout)
 
 
@@ -263,36 +292,41 @@ if __name__=="__main__":
     scc = DataParse()
 
     request_url=scc.GetValueOfOption("common","request_url")
+    service_stop_req=scc.GetValueOfOption("common","service_stop_req")
     download_url=scc.GetValueOfOption("common","download_url")
     sectionKeyList=scc.GetConfSections()
     print sectionKeyList
     # ['access', 'cp', 'gc', 'group_as', 'gs', 'ice', 'sc', 'sp', 'ss', 'stream_as', 'common']
 
-    # for i in range(len(sectionKeyList)):
-    #     if 'access' in sectionKeyList[i]:
-    #         service_data = scc.ConfigService('access', sectionKeyList[i], download_url)
-    #         scc.PostDataToServer(service_data, request_url)
-    #     if 'cp' in sectionKeyList[i]:
-    #         service_data=scc.ConfigService('cp',sectionKeyList[i],download_url)
-    #         scc.PostDataToServer(service_data, request_url)
-    #     if 'gc' in sectionKeyList[i]:
-    #         service_data=scc.ConfigService('gc',sectionKeyList[i],download_url)
-    #         scc.PostDataToServer(service_data, request_url)
-    #     if 'gs' in sectionKeyList[i]:
-    #         service_data = scc.ConfigService('gs', sectionKeyList[i], download_url)
-    #         scc.PostDataToServer(service_data, request_url)
-    #     if 'ice' in sectionKeyList[i]:
-    #         service_data = scc.ConfigService('ice', sectionKeyList[i], download_url)
-    #         scc.PostDataToServer(service_data, request_url)
-    #     if 'sc' in sectionKeyList[i]:
-    #         service_data = scc.ConfigService('sc', sectionKeyList[i], download_url)
-    #         scc.PostDataToServer(service_data, request_url)
-    #     if 'sp' in sectionKeyList[i]:
-    #         service_data = scc.ConfigService('sp', sectionKeyList[i], download_url)
-    #         scc.PostDataToServer(service_data, request_url)
-    #     if 'ss' in sectionKeyList[i] and len(sectionKeyList[i])==2:
-    #         service_data = scc.ConfigService('ss', sectionKeyList[i], download_url)
-    #         scc.PostDataToServer(service_data, request_url)
+    for i in range(len(sectionKeyList)):
+        if 'access' == sectionKeyList[i]:
+            service_data = scc.ConfigService('access', sectionKeyList[i], download_url)
+            scc.PostDataToServer(service_data, request_url)
+        if 'cp' == sectionKeyList[i]:
+            service_data=scc.ConfigService('cp',sectionKeyList[i],download_url)
+            scc.PostDataToServer(service_data, request_url)
+        if 'gc' == sectionKeyList[i]:
+            service_data=scc.ConfigService('gc',sectionKeyList[i],download_url)
+            scc.PostDataToServer(service_data, request_url)
+        if 'gs' == sectionKeyList[i]:
+            service_data = scc.ConfigService('gs', sectionKeyList[i], download_url)
+            scc.PostDataToServer(service_data, request_url)
+        if 'ice' == sectionKeyList[i]:
+            service_data = scc.ConfigService('ice', sectionKeyList[i], download_url)
+            scc.PostDataToServer(service_data, request_url)
+        if 'sc' == sectionKeyList[i]:
+            service_data = scc.ConfigService('sc', sectionKeyList[i], download_url)
+            scc.PostDataToServer(service_data, request_url)
+        if 'sp' == sectionKeyList[i]:
+            service_data = scc.ConfigService('sp', sectionKeyList[i], download_url)
+            scc.PostDataToServer(service_data, request_url)
+        if 'ss' == sectionKeyList[i] and len(sectionKeyList[i])==2:
+            service_data = scc.ConfigService('ss', sectionKeyList[i], download_url)
+            scc.PostDataToServer(service_data, request_url)
+        if 'servicestop' == sectionKeyList[i]:
+            service_data=scc.ConfigStopService(sectionKeyList[i])
+            scc.PostDataToServer(service_data, service_stop_req)
+
         # if 'stream_as' in sectionKeyList[i]:
         #     service_data = scc.ConfigService('stream_as', sectionKeyList[i], download_url)
         #     scc.PostDataToServer(service_data, request_url)
@@ -303,15 +337,15 @@ if __name__=="__main__":
     # service_data = scc.ConfigService('cp', 'cp', download_url)
     # scc.PostDataToServer(service_data, request_url)
 
-    service_data=scc.ConfigService('gc','gc',download_url)
-    scc.PostDataToServer(service_data, request_url)
+    # service_data=scc.ConfigService('gc','gc',download_url)
+    # scc.PostDataToServer(service_data, request_url)
     #
     # service_data = scc.ConfigService('gs', 'gs', download_url)
     # scc.PostDataToServer(service_data, request_url)
     #
-    service_data = scc.ConfigService('sc', 'sc', download_url)
-    scc.PostDataToServer(service_data, request_url)
-    #
+    # service_data = scc.ConfigService('sc', 'sc', download_url)
+    # scc.PostDataToServer(service_data, request_url)
+    # #
     # service_data = scc.ConfigService('ss', 'ss', download_url)
     # scc.PostDataToServer(service_data, request_url)
 
