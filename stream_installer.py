@@ -38,28 +38,29 @@ def do_install(service_name, url = "http://192.168.5.30:8088/jenkins/view/%E5%B9
         print "{0} not exists".format(filepath)
         return (None, None)
 
-    os.chdir("{0}".format(uncompress_destdir))
-    if os.path.exists(uncompress_dirname):
-       retcode = subprocess.call(["rm","-rf", uncompress_dirname])
+    os.chdir("{0}".format(uncompress_destdir)) #os.chdir() 方法用于改变当前工作目录到指定的路径。 也就是将工作目录切换到tmp
+    if os.path.exists(uncompress_dirname):# 查询指定文件fsp-sss-stream-1.0.0.1是否存在
+       retcode = subprocess.call(["rm","-rf", uncompress_dirname])  #执行这一步表示指定文件存在，然后删除它
        if retcode != 0:
            print "delete pkg files in {0} is failed".format(uncompress_destdir)
            return (None, None)
 
-    os.chdir("{0}/smd".format(install_dirname))
-    retcode = subprocess.call(["tar", "xf", filepath, "-C", uncompress_destdir])
+    os.chdir("{0}/smd".format(install_dirname)) #切换工作目录到/fsp_sss_stream/smd
+    retcode = subprocess.call(["tar", "xf", filepath, "-C", uncompress_destdir]) # tar xf fsp-sss-stream-1.0.0.1.tar.gz -C /tmp
     if retcode != 0:
         print "uncompress {0} failed".format(filepath)
         return (None, None)
 
     install_script_path = "{0}/{1}/tools/install_server.sh".format(uncompress_destdir, uncompress_dirname)
-    if not os.path.exists(install_script_path):
+    #install_script_path =/tmp/fsp-sss-stream-1.0.0.1/tools/install_server.sh
+    if not os.path.exists(install_script_path): #查询指定文件/tmp/fsp-sss-stream-1.0.0.1/tools/install_server.sh是否存在
         print "install script {0} not exist".format(install_script_path)
         return (None, None)
 
     if service_name in ["cp", "ss", "gs", "stream_as", "group_as", "ice", "sc", "gc", "sp", "access", "ma", "ms", "rule"]:
-        curdir = os.getcwd()
+        curdir = os.getcwd() #获取当前目录
         os.chdir("{0}/{1}/tools".format(uncompress_destdir, uncompress_dirname))
-        subprocess.call(["./install_server.sh", service_name])
+        subprocess.call(["./install_server.sh", service_name]) #切换到该目录下，然后通过脚本install_server.sh安装服务
         os.chdir(curdir)
 
     # install.sh 将会 service_name 安装到 /fsp_sss_stream/service_name 目录下
